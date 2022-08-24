@@ -6,8 +6,8 @@ package C7_Week1;
 
 /**
  *
- * @author LHUser
+ * @author Akalis
  */
-class JPrame {
+public class J {
     
 }
