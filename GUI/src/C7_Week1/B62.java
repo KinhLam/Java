@@ -10,14 +10,14 @@ import javax.swing.JFrame;
  *
  * @author LHUser
  */
-public class BT62 extends JFrame{
-    public BT62(){
+public class B62 extends JFrame{
+    public B62(){
         super("Demo Windows");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         
     }
     public static void main(String[] args){
-        BT62 ui = new BT62();
+        B62 ui = new B62();
         ui.setSize(400, 300);
         ui.setLocationRelativeTo(null);
         ui.setVisible(true);

@@ -16,8 +16,8 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
  *
  * @author LHUser
  */
-public class BT63 extends JFrame{
-    public BT63(){
+public class B63 extends JFrame{
+    public B63(){
         super("Demo Windows");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         JPanel pnFlow = new JPanel();
@@ -36,7 +36,7 @@ public class BT63 extends JFrame{
         
     }
     public static void main(String[] args){
-        BT63 ui = new BT63();
+        B63 ui = new B63();
         ui.setSize(400, 300);
         ui.setLocationRelativeTo(null);
         ui.setVisible(true);
