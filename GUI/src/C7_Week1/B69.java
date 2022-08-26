@@ -115,8 +115,227 @@ public class B69 extends JFrame{
         JPanel pnGroup = new JPanel();
         pnGroup.setLayout(new BoxLayout(pnGroup,BoxLayout.Y_AXIS));
         pnGroup.setSize(new Dimension(100,300));
+        JPanel pnHang1 = new JPanel();
+        pnHang1.setLayout(new FlowLayout(FlowLayout.CENTER));
+        rdC = new JRadioButton("Cộng");
+        rdT = new JRadioButton("Trừ");
+        rdN = new JRadioButton("Nhân");
+        rdChia = new JRadioButton("Chia");
+        group.add(rdC);
+        group.add(rdT);
+        group.add(rdN);
+        group.add(rdChia);
+        
+        pnHang1.add(rdC);
+        pnHang1.add(rdT);
+        pnGroup.add(pnHang1);
+        
+        JPanel pnHang2 = new JPanel();
+        pnHang2.setLayout(new FlowLayout(FlowLayout.CENTER));
+        pnHang2.add(rdN);
+        pnHang2.add(rdChia);
+        pnGroup.add(pnHang2);
+        TitledBorder borderRight = new TitledBorder(BorderFactory.createLineBorder(Color.red), "Chọn phép toán");
+        pnRight.add(pnGroup);
+        
+        //Hàm phần kết quả
+        JPanel pnKQ = new JPanel();
+        pnKQ.setLayout(new FlowLayout(FlowLayout.CENTER));
+        JLabel lblKQ = new JLabel("Kêt quả");
+        txtKQ =new JTextField(15);
+        pnKQ.add(lblKQ);
+        pnKQ.add(txtKQ);
+        pnRight.add(pnKQ);
+        txtKQ.setEditable(false);
+        
+        TitledBorder border1 = new TitledBorder(BorderFactory.createLineBorder(Color.BLUE),"Nhập a và b");
+        pnRight.setBorder(border1);
+        pnGroup.setBorder(borderRight);
+        pnCenter.add(pnRight,BorderLayout.CENTER);
+        
+        con.add(pnLeft,BorderLayout.WEST);
+        con.add(pnRight,BorderLayout.CENTER);
+    }
+    
+    //Thêm sự kiện cho Button
+    private void addEvents(){
+        
+        //Sự kiện Button Thoát
+        btThoat.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.exit(1);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+        });
         
         
+        //Sự kiện cho Button Xóa
+        btXoa.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                txtA.setText("");
+                txtB.setText("");
+                txtKQ.setText("");
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+        });
+        
+        //Sự kiện cho Button Giải
+        btGiai.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                double soA=0,soB=0;
+                if (rdC.isSelected()) {
+                    if (txtA.getText().isEmpty()) {
+                        soA=0;
+                        if (txtB.getText().isEmpty()) {
+                            soB=0;
+                        }
+                        else{
+                            soB = Double.parseDouble(txtB.getText());
+                        }
+                    }
+                    else{
+                        soA=Double.parseDouble(txtA.getText());
+                        if (txtB.getText().isEmpty()) {
+                            soB = 0;
+                        }
+                        else{
+                            soB=Double.parseDouble(txtB.getText());
+                        }
+                    }
+                    txtKQ.setText(String.valueOf(soA + soB));
+                }
+                
+                else if (rdT.isSelected()) {
+                    if (txtA.getText().isEmpty()) {
+                        soA=0;
+                        if (txtB.getText().isEmpty()) {
+                            soB = 0;
+                        }
+                        else{
+                            soB=Double.parseDouble(txtB.getText());
+                        }
+                    }
+                    else{
+                        soA=Double.parseDouble(txtA.getText());
+                        if (txtB.getText().isEmpty()) {
+                            soB=0;
+                        }
+                        else{
+                            soB=Double.parseDouble(txtB.getText());
+                        }
+                    }
+                    txtKQ.setText(String.valueOf(soA - soB));
+                    
+                    
+                }else if (rdN.isSelected()) {
+                    if (txtA.getText().isEmpty()) {
+                        soA=0;
+                        if (txtB.getText().isEmpty()) {
+                            soB=0;
+                        }
+                        else{
+                            soB= Double.parseDouble(txtB.getText());
+                        }
+                    }
+                    else{
+                        soA = Double.parseDouble(txtA.getText());
+                        if (txtB.getText().isEmpty()) {
+                            soB=0;
+                        }
+                        else{
+                            soB=Double.parseDouble(txtB.getText());
+                        }
+                    }
+                    txtKQ.setText(String.valueOf(soA*soB));
+                }
+                
+                else if (rdChia.isSelected()) {
+                    if (txtA.getText().isEmpty()) {
+                        soA=0;
+                        if (txtB.getText().isEmpty()) {
+                            soB=0;
+                        }
+                        else{
+                            soB= Double.parseDouble(txtB.getText());
+                        }
+                    }
+                    else{
+                        soA = Double.parseDouble(txtA.getText());
+                        if (txtB.getText().isEmpty()) {
+                            soB=0;
+                        }
+                        else{
+                            soB=Double.parseDouble(txtB.getText());
+                        }
+                    }
+                    txtKQ.setText(String.valueOf(soA/soB));
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Chưa chọn phép tính");
+                }
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            }
+        });
     }
 
     
