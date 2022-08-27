@@ -31,7 +31,8 @@ import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.ScrollPaneConstants;
-import javax.swing.SwingConstants;
+
+
 /**
  *
  * @author Akalis
@@ -50,7 +51,7 @@ public class B71 extends JFrame{
         modelTen = new DefaultListModel<>();
         modelTen.addElement("Black");
         modelTen.addElement("Blue");
-        modelTen.addElement("Dark");
+        modelTen.addElement("Drak");
         
         lst = new JList<>(modelTen);
         
@@ -71,7 +72,7 @@ public class B71 extends JFrame{
         
         lst1 = new JList<>(modelOut);
         lst1.setVisibleRowCount(5);
-        JScrollPane sc1 = new JScrollPane(lst, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane sc1 = new JScrollPane(lst1, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         con.add(sc);
         con.add(btC);
         con.add(sc1);
