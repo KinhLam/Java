@@ -5,7 +5,6 @@
 package C7_Week1;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -16,8 +15,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 //import javax.swing.*;
-import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
-import javax.swing.text.BadLocationException;
 
 /**
  *
