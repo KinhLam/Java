@@ -21,7 +21,7 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
  */
 public class B64 extends JFrame{
     public B64(){
-        super("Demo Windows");
+        super("B64");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         
         JPanel pnBox = new JPanel();

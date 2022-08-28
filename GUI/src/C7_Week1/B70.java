@@ -85,7 +85,7 @@ public class B70 extends JFrame{
     }
     
     public B70(){
-        super("Demo Windows");  
+        super("B70");  
         addControl();
         addEvents();
         

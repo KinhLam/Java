@@ -226,7 +226,7 @@ public class B68 extends JFrame{
     
     
     public B68(){
-        super("Demo Windows");  
+        super("B68");  
         addControl();
         addEvents();
         

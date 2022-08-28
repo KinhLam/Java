@@ -103,7 +103,7 @@ public class B67 extends JFrame{
     }
     
     public B67(){
-        super("Demo Windows");  
+        super("B67");  
         addControl();
         Events();
         

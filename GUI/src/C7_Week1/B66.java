@@ -102,7 +102,7 @@ public class B66 extends JFrame{
     
     
     public B66(){
-        super("Dem Windows");
+        super("B66");
 //        setDefaultCloseOperation(EXIT_ON_CLOSE);
         addControls();
         addEvents();
