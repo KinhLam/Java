@@ -50,6 +50,7 @@ public class philosopher extends JFrame {
         dtm.addColumn("First Name");
         dtm.addColumn("Last Name");
         dtm.addColumn("Years");
+        tb = new JTable(dtm);
         pnMid.setLayout(new BorderLayout());
         JScrollPane sc = new JScrollPane(tb, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         pnMid.add(sc, BorderLayout.CENTER);

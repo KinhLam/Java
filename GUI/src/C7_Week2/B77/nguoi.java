@@ -11,7 +11,7 @@ package C7_Week2.B77;
 public class nguoi {
     private String FirstName;
     private String LastName;
-    private String years;
+    private String Years;
 
     public String getFirstName() {
         return FirstName;
@@ -30,11 +30,11 @@ public class nguoi {
     }
 
     public String getYears() {
-        return years;
+        return Years;
     }
 
-    public void setYears(String years) {
-        this.years = years;
+    public void setYears(String Years) {
+        this.Years = Years;
     }
     
     
