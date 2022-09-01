@@ -24,61 +24,62 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Akalis
  */
-public class philosopher extends JFrame{
-    JButton btThem,btXoa;
+public class philosopher extends JFrame {
+
+    JButton btThem, btXoa;
     static DefaultTableModel dtm;
     JTable tb;
     public static ArrayList<nguoi> ds = new ArrayList<>();
-    
-    private void addControls(){
+
+    private void addControls() {
         Container con = getContentPane();
         con.setLayout(new BorderLayout());
         JPanel pnTop = new JPanel();
-        con.add(pnTop,BorderLayout.NORTH);
+        con.add(pnTop, BorderLayout.NORTH);
         btThem = new JButton("Add philosopher");
         pnTop.setLayout(new FlowLayout(FlowLayout.CENTER));
         pnTop.add(btThem);
-        
-        btXoa=new JButton("Remove Selected Philosopher");
+
+        btXoa = new JButton("Remove Selected Philosopher");
         pnTop.add(btXoa);
-        
+
         //Tạo bảng và add các cột vào bảng
         JPanel pnMid = new JPanel();
-        con.add(pnMid,BorderLayout.CENTER);
-        dtm= new DefaultTableModel();
+        con.add(pnMid, BorderLayout.CENTER);
+        dtm = new DefaultTableModel();
         dtm.addColumn("First Name");
         dtm.addColumn("Last Name");
         dtm.addColumn("Years");
         pnMid.setLayout(new BorderLayout());
-        JScrollPane sc = new JScrollPane(tb, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        pnMid.add(sc,BorderLayout.CENTER);
+        JScrollPane sc = new JScrollPane(tb, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        pnMid.add(sc, BorderLayout.CENTER);
     }
-    
+
     //Thêm một danh sách vào cuói trang
-    protected static void loadData(){
+    protected static void loadData() {
         dtm.setRowCount(0);
-        for (nguoi o:ds) {
+        for (nguoi o : ds) {
             Vector<Object> vec = new Vector<>();
             vec.add(o.getFirstName());
             vec.add(o.getLastName());
             vec.add(o.getYears());
-            
+
             dtm.addRow(vec);
         }
     }
-    
+
     //Thêm sự kiện cho Button
-    private void addEvents(){
+    private void addEvents() {
         //Gọi cửa sổ philosopher
         btThem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 add a = new add();
-                a.showWindow();
+                a.showWindown();
                 loadData();
             }
         });
-        
+
         btXoa.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -86,8 +87,7 @@ public class philosopher extends JFrame{
                 int row = tb.getSelectedRow();
                 if (row == -1) {
                     return;
-                }
-                else{
+                } else {
                     ds.remove(row);
                 }
                 loadData();
@@ -114,16 +114,16 @@ public class philosopher extends JFrame{
             }
         });
     }
-    
-    public philosopher(){
+
+    public philosopher() {
         super("Test");
         addControls();
         addEvents();
     }
-    
+
     public static void main(String[] args) {
         philosopher ui = new philosopher();
-        ui.setSize(400,350);
+        ui.setSize(400, 350);
         ui.setLocationRelativeTo(null);
         ui.setVisible(true);
     }

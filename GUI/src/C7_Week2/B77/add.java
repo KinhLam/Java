@@ -49,9 +49,9 @@ public class add extends JDialog{
         });
     }
     
-    public void showWindow(){
+    public void showWindown(){
         this.setSize(400,350);
-        this.setDefaultCloseOperation(JDialog.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
