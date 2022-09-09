@@ -12,7 +12,7 @@ import javax.swing.JFrame;
  */
 public class B62 extends JFrame{
     public B62(){
-        super("Demo Windows");
+        super("B62");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         
     }
