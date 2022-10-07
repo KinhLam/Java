@@ -2,14 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package B29;
+package C23_P1_1;
 
 /**
  *
  * @author Akalis
  */
-public class B29 {
-    public static void main(String[] args) {
-
-    }
+public class B8_11 {
+    
 }
